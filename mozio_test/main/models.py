@@ -1,4 +1,5 @@
-from django.contrib.gis.db import models
+from django.db import models
+from django.contrib.gis.db import models as geomodels
 
 
 class ServiceArea(models.Model):
@@ -6,11 +7,11 @@ class ServiceArea(models.Model):
     Model that represents a service area.
     """
 
-    polygon = models.PolygonField()
+    polygon = geomodels.PolygonField()
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
-    objects = models.GeoManager()
+    objects = geomodels.GeoManager()
 
     class Meta:
         ordering = ('-created',)
