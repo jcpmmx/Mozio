@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'main/css/add_service_area.css' %}">
+{% endblock extra_css %}
+
+
+{% block info_area %}
+    <h4>Add a new service area</h4>
+    <p class="small">
+        Click on the map to add a new point. You need at least 3 points to create a service area. Drag a point to relocate it.
+    </p>
+    <ol id="service_area_point_list"></ol>
+    <form id="service_area_form" method="post">
+        {% csrf_token %}
+        {{ service_area_form.service_area_path.as_hidden }}
+        <div class="action_buttons">
+            <button id="add_service_area" class="btn btn-success btn-block" type="submit">Add service area</button>
+            <button id="clear_map" class="btn btn-danger btn-block">Clear the map</button>
+        </div>
+    </form>
+{% endblock info_area %}
+
+
+{% block extra_js %}
+    <script src="{% static 'main/js/add_service_area.js' %}"></script>
+    <script type="text/javascript">
+        // We can only initialize this if the DOM is ready
+        $(document).ready(function() {
+            // Checking if the google.maps objects is defined
+            if (google && google.maps) {
+                // Creating a new AddServiceArea object when the map is loaded
+                var addServiceArea = new MozioTest.AddServiceArea();
+                google.maps.event.addDomListener(window, 'load', function() {
+                    addServiceArea.init();
+                });
+            }
+        });
+    </script>
+{% endblock extra_js %}

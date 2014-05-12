@@ -1,0 +1,7 @@
+#info_area #service_area_point_list {
+    height: 45%;
+    overflow: scroll;
+}
+#info_area #service_area_point_list > li {
+    padding-left: 1.5em;
+}

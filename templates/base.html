@@ -1,0 +1,59 @@
+{% load staticfiles %}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mozio test project, by Julián Pérez</title>
+    <meta name="author" content="Julián Pérez">
+    <meta name="description" content="Mozio test project for potential hires.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-sm-6">
+                <h1>Mozio test project <small>by Julián Pérez</small></h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a class="btn btn-default" href="{% url 'add_service_area' %}">Add a new service area</a>
+                <a class="btn btn-default" href="{% url 'verify_point' %}">Verify a point</a>
+            </div>
+        </header>
+        <div class="row">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{% if message.tags == 'success' %}success{% else %}danger{% endif %} alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ message|safe }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div id="main_container" class="row">
+            <div id="map" class="col-sm-9"></div>
+            <div id="info_area" class="col-sm-3">
+                {% block info_area %}{% endblock info_area %}
+            </div>
+        </div>
+        <footer class="row">
+            <div class="col-sm-12">
+                <p>By <a href="http://julianperez.me" target="_blank">Julián Pérez</a>.</p>
+            </div>
+        </footer>
+    </div>
+    <!-- Scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1Me6VqmlpNvHxr77b8RpuKQCCWEkV9-0&sensor=false"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/global.js' %}"></script>
+    {% block extra_js %}{% endblock extra_js %}
+</body>
+</html>

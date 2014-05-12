@@ -1,0 +1,57 @@
+body {
+    padding: 3em 0;
+}
+
+a:not(.btn),
+a:not(.btn):hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+header {
+    padding-bottom: 1em;
+    margin-bottom: 3em;
+    border-bottom: 1px solid #eee;
+}
+header h1 {
+    margin: 0;
+}
+
+footer {
+    padding-top: 1em;
+    margin-top: 3em;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+
+#main_container {
+    border: 1px solid #ccc;
+}
+
+#map {
+    height: 433px;
+    background: #eee;
+    text-align: center;
+}
+#map:after {
+    content: 'Loading map...';
+    line-height: 433px;
+}
+
+#info_area {
+    display: relative;
+    height: 433px;
+    padding: 1.5em;
+    overflow: hidden;
+}
+#info_area .action_buttons {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5em;
+    background: #fff;
+    border-top: 1px solid #eee;
+}

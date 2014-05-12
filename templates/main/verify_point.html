@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% load staticfiles %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'main/css/verify_point.css' %}">
+{% endblock extra_css %}
+
+
+{% block info_area %}
+    <h4>Verify a point</h4>
+    <p class="small">
+        Click on the map to verify if that point is contained in one of the service areas.
+    </p>
+    <ul id="verification_results"></ul>
+{% endblock info_area %}
+
+
+{% block extra_js %}
+    <script src="{% static 'main/js/verify_point.js' %}"></script>
+    <script type="text/javascript">
+        // We can only initialize this if the DOM is ready
+        $(document).ready(function() {
+            // Checking if the google.maps objects is defined
+            if (google && google.maps) {
+                // Creating a new VerifyPoint object when the map is loaded
+                var verifyPoint = new MozioTest.VerifyPoint();
+                google.maps.event.addDomListener(window, 'load', function() {
+                    verifyPoint.init('{{ verify_point_service_endpoint }}');
+                });
+            }
+        });
+    </script>
+{% endblock extra_js %}
