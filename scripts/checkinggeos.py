@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+
 from django.contrib.gis.geos.libgeos import lib_path, geos_version_info
 
 
