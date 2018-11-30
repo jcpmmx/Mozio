@@ -1,7 +1,5 @@
-MozioTest
-===
-Mozio take-home test project.
-Originally deployed to AWS.
+# Mozio
+> Originally developed as a take-home test project for Mozio.
 
 ### Stack includes:
 - Python
