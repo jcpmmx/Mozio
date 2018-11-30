@@ -1,6 +1,5 @@
 MozioTest
-========
-
+===
 Mozio test project for potential hires.
 
 Stack includes:
@@ -10,7 +9,3 @@ Stack includes:
 - Google Maps Javascript API
 - jQuery
 - Twitter Bootstrap
-
--
-
-Julián Pérez ©2014
