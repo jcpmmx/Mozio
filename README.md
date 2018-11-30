@@ -1,8 +1,9 @@
 MozioTest
 ===
-Mozio test project for potential hires.
+Mozio take-home test project.
+Originally deployed to AWS.
 
-Stack includes:
+### Stack includes:
 - Python
 - Django
 - MySQL (MyISAM) as database with Geodjango support
