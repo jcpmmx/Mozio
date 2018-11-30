@@ -1,7 +1,7 @@
 # Mozio
 > Originally developed as a take-home test project for Mozio.
 
-### Stack includes:
+### Stack includes
 - Python
 - Django
 - MySQL (MyISAM) as database with Geodjango support
