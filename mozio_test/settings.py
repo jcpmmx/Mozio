@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
-SECRET_KEY = 'bs87ex3sl_n%co7d8uok)n4fuv)0m13=#ndsx@=3p03n2g7r9m'
+SECRET_KEY = '<EDITED>'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = []
